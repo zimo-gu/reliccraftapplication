@@ -35,7 +35,7 @@ export async function handler(event, context) {
             return {
                 statusCode: 303,
                 headers: {
-                    "Location": `/error?msg=${encodeURIComponent("You cannot submit ban appeals with this Discord account.")}`,
+                    "Location": `/error?msg=${encodeURIComponent("You cannot submit applications with this Discord account.")}`,
                 },
             };
         }
@@ -50,15 +50,15 @@ export async function handler(event, context) {
                         value: `<@${userInfo.id}> (${userInfo.username}#${userInfo.discriminator})`
                     },
                     {
-                        name: "Why were you banned?",
+                        name: "Why do you want to be an admin at Relic Craft?",
                         value: payload.banReason.slice(0, MAX_EMBED_FIELD_CHARS)
                     },
                     {
-                        name: "Why do you feel you should be unbanned?",
+                        name: "What makes you unique from other admins, and what experience do you have?",
                         value: payload.appealText.slice(0, MAX_EMBED_FIELD_CHARS)
                     },
                     {
-                        name: "What will you do to avoid being banned in the future?",
+                        name: "Why should we accept you, and what would you help us with, if you get accepted?",
                         value: payload.futureActions.slice(0, MAX_EMBED_FIELD_CHARS)
                     }
                 ]
