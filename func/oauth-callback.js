@@ -68,7 +68,7 @@ export async function handler(event, context) {
                     return {
                         statusCode: 303,
                         headers: {
-                            "Location": "/error"
+                            "Location": "/form"
                         }
                     };
                 }
